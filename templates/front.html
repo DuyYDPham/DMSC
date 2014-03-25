@@ -3,8 +3,8 @@
 {% block content %}
 
 	<!-- Gathers the elements in the 'posts' list from our Gql query and displays them-->
-	{% for p in posts %}
-	  {{ p.render() | safe }}  <!-- Tells jinja2 not to escape our HTML here -->
+	{% for c in classes %}
+	  {{ c.render() | safe }}  <!-- Tells jinja2 not to escape our HTML here -->
 	  <br /><br />
 	{% endfor %}
 

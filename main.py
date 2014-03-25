@@ -193,7 +193,7 @@ class MainHandler(Generic):
     	self.write("Hello World!")
         classes = Class.all().order('-created')
         if self.format == 'html':
-            self.render('front.html', class = class)
+            self.render('front.html', classes = classes)
         else:
             return self.render_json([c.as_dict() for c in classes])
 
