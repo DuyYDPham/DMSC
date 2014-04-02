@@ -2,6 +2,10 @@
 
 {% block content %}
 
+	<div>
+		<input type="button" onClick="window.location='/login'" value="Login"
+	</div>	
+
 	<!-- Gathers the elements in the 'posts' list from our Gql query and displays them-->
 	{% for c in classes %}
 	  {{ c.render() | safe }}  <!-- Tells jinja2 not to escape our HTML here -->
