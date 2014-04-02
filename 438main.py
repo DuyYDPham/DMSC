@@ -364,14 +364,6 @@ class Signup(Handler):
 	def get(self):
 		self.render('signup-form.html')
 
-	# Create json for the Sift Science API
-	def make_Sift(self, data):
-		self.response.headers['Content-Type'] = 'application/json'
-	
-		#What do we use now to send a response to Sift?
-		api_response = json.dumps(data)
-		self.response.out.write(data) 
-
 	
 	def post(self):
 		have_error = False
@@ -401,15 +393,6 @@ class Signup(Handler):
 		if have_error:
 			self.render("signup-form.html", **params)
 		else:
-			
-			# Create json for the Sift Science API
-			loginBlob = {
-		                 "$type": "$create_account",
-		                 "$api_key": "65566e25430ff282",
-		                 "$user_id": self.username,
-		                 "$user_email": self.email
-		            }
-			self.make_Sift(loginBlob)
 			
 			self.done()
 
