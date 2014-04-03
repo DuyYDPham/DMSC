@@ -440,7 +440,7 @@ class Login(Handler):
 			self.login(u)	#handler method to set cookie
 			self.redirect('/welcome')
 		else:
-			msg = 'Invalid login'
+			msg = "Invalid login"
 			self.render('login-form.html', error=msg)
 
 	### add option (link or button) to sign up
